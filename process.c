@@ -1,42 +1,37 @@
 #include "monty.h"
-
+/**
+ * process_line - process and parse line
+ * @stack: the stack
+ *
+ * Return: integer
+ */
 int process_line(stack_t **stack)
 {
 	instruction_t inst[] = {
 		{"push", add_dnodeint},
-		{"pall", print_dlistint}
+		{"pall", print_dlistint},
+		{"pint", print_top},
+		{"pop", pop_top},
+		{"swap", swap_top},
+		{"nop", nothing},
+		{"add", add_top_two},
+		{"sub", sub_top_two},
+		{"div", div_top_two},
+		{"mul", mul_top_two},
+		{"mod", mod_top_two},
+		{NULL, NULL}
 	};
-	char *token;
-	int i = 0, new_size, size = 2;
+	int i = 0;
 
-	data.args = malloc(size * sizeof(char **));
-	if (data.args == NULL)
-		push_error(11);/**/
-	token = strtok(data.line, " \n");
-	while (token)
+	while ((inst + i)->opcode)
 	{
-		data.args[i++] = token;
-		token = strtok(NULL, "\n");
-		if (i > size)
+		if (strcmp((inst + i)->opcode, *data.args) == 0)
 		{
-			new_size = size * 2;
-			data.args = _realloc(data.args, size, new_size);
-			if (data.args == NULL)
-				push_error(11);
-			size = new_size;
-		}
-	}
-	i = 0;
-	while ((inst + i)->opcode)/**/
-	{
-		if (strcmp((inst + i)->opcode, data.args[0]) == 0)
-		{
-			(inst + i)->f(stack, data.line_number);/**/
+			(inst + i)->f(stack, data.line_number);
 			return (0);
 		}
 		i++;
 	}
-	if ((inst + i)->opcode == NULL)
-		push_error(15);
-	return (0);
+	push_error(15);
+	return (1);
 }

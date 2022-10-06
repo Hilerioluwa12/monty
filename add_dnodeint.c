@@ -6,21 +6,22 @@
  *
  * Return: void
  */
-void add_dnodeint(stack_t **stack,
-	       	unsigned int linr_number __attribute__((unused)))
+void
+add_dnodeint(stack_t **stack,
+	unsigned int line_number __attribute__((unused)))
 {
 	stack_t *new_node;
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
 		push_error(11);
-	if (_isdigit(data.args[1] > 0)
-			push_error(16);
+	if (_isdigit(data.args[1]) > 0)
+		push_error(16);
 	new_node->n = atoi(data.args[1]);
 	if (*stack == NULL)
 	{
 		new_node->prev = NULL;
-		new_node->next = NULL
+		new_node->next = NULL;
 	}
 	else
 	{
@@ -29,5 +30,4 @@ void add_dnodeint(stack_t **stack,
 		new_node->prev = NULL;
 	}
 	*stack = new_node;
-
 }

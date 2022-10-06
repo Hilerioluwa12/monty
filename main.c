@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * Globale data - collection of data instance
  */
@@ -6,16 +7,17 @@ data_t data;
 
 /**
  * main - main function
- * @ac: arg count
- * @av: args
+ * @ac: arguments count
+ * @av: arguments vector
+ *
  * Return: (Success) EXIT_SUCCESS
- * --------(Fail) EXIT_FAILURE
+ * ------- (Fail) EXIT_FAILURE
  */
 int main(int ac, char **av)
 {
-	stack_t *stack = NULL;
 	ssize_t n_read = 1;
 	size_t length = 0;
+	stack_t *stack = NULL;
 
 	memset((void *) &data, 0, sizeof(data));
 	if (ac != 2)
@@ -31,6 +33,8 @@ int main(int ac, char **av)
 		data.line_number++;
 		free(data.args);
 		if (split_line() < 0)
+			continue;
+		if (*data.args == NULL)
 			continue;
 		process_line(&stack);
 	}

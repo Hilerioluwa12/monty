@@ -1,8 +1,10 @@
 #include "monty.h"
+
 /**
  * _isdigit - checks for a digit from 0 to 9
  * @str: the integer to be checked
- * Return: 1 or 0
+ *
+ * Return: 1 if is digit, 0 otherwise
  */
 int _isdigit(char *str)
 {

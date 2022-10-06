@@ -1,11 +1,12 @@
 #include "monty.h"
+
 /**
  * fill_an_array - fill an array with elements
  * @a: the given array
  * @el: the given element
  * @len: the length of the array
  *
- * Return: ponter to filled array
+ * Return: pointer to filled array
  */
 void *fill_an_array(void *a, int el, unsigned int len)
 {
@@ -20,6 +21,7 @@ void *fill_an_array(void *a, int el, unsigned int len)
 	}
 	return (a);
 }
+
 /**
  * _realloc - reallocates memory block
  * @ptr: pointer to the previous memory
@@ -28,7 +30,7 @@ void *fill_an_array(void *a, int el, unsigned int len)
  *
  * Return: a pointer to the newly allocated memory
  */
-void *_realloc(void *ptr, unsigned int old_size, unsigne int new_size)
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *result;
 
@@ -39,7 +41,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigne int new_size)
 		free(ptr);
 		push_error(11);
 	}
-	result = malloc(ne_size)
+	result = malloc(new_size);
 	if (result == NULL)
 		push_error(11);
 	if (ptr == NULL)
@@ -68,6 +70,7 @@ void free_data(void)
 /**
  * free_dlistint - frees a linked list
  * @stack: a pointer to the linked list
+ *
  * Return: void
  */
 void free_dlistint(stack_t *stack)

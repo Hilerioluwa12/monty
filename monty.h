@@ -1,8 +1,6 @@
 #ifndef _MONTY_H
 #define _MONTY_H
 
-
-
 /* Libraries */
 #include <ctype.h>
 #include <stdlib.h>
@@ -26,7 +24,6 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
-
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -40,7 +37,6 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
 
 /**
  * struct instance_s - data instance
@@ -81,4 +77,4 @@ void sub_top_two(stack_t **stack, unsigned int line_number);
 void div_top_two(stack_t **stack, unsigned int line_number);
 void mul_top_two(stack_t **stack, unsigned int line_number);
 void mod_top_two(stack_t **stack, unsigned int line_number);
-#endif
+#endif /* _MONTY_H */
