@@ -1,3 +1,5 @@
+![monty](https://user-images.githubusercontent.com/104834114/194239467-0552553a-9b74-4612-9325-f96ae0b639ed.png)
+
 ## Resources
 Read or watch:
 
@@ -116,7 +118,7 @@ Monty byte code files can contain blank lines (empty or made of spaces only, and
 	$
 	pall This is the end of our program. Monty is awesome!$
 	julien@ubuntu:~/monty$
-The monty program
+## The monty program
 
 Usage: monty file
 where file is the path to the file containing Monty byte code
@@ -132,3 +134,6 @@ it finds an error in the file
 an error occured
 If you can’t malloc anymore, print the error message Error: malloc failed, followed by a new line, and exit with status EXIT_FAILURE.
 You have to use malloc and free and are not allowed to use any other function from man malloc (realloc, calloc, …)
+
+## Sources
+keousl, Dr.Obed
