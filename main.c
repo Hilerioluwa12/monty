@@ -19,7 +19,7 @@ int main(int ac, char **av)
 
 	memset((void *) &data, 0, sizeof(data));
 	if (ac != 2)
-		push_error(12)
+		push_error(12);
 	data.filename = av[1];
 	data.fp = fopen(data.filename, "r");
 	if (data.fp == NULL)
