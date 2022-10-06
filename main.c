@@ -1,5 +1,9 @@
 #include "monty.h"
+/**
+ * Globale data - collection of data instance
+ */
 data_t data;
+
 /**
  * main - main function
  * @ac: arg count
@@ -9,23 +13,25 @@ data_t data;
  */
 int main(int ac, char **av)
 {
-	statck stack_t = NULL;
-	ssize_t n_read;
+	statck_t *stack = NULL;
+	ssize_t n_read = 1;
 	size_t length = 0;
 
 	memset((void *) &data, 0, sizeof(data));
 	if (ac != 2)
-	{
 		push_error(12)
-	}
 	data.filename = av[1];
 	data.fp = fopen(data.filename, "r");
 	if (data.fp == NULL)
 		push_error(14);
 	while ((n_read = getline(&data.line, &length, fp)) > 0)
 	{
+		if (*data.line == '\n')
+			continue;
 		data.line_number++;
-		split_line(&data);
+		free(data.args);
+		if (split_line() < 0)
+			continue;
 		process_line(&stack);
 	}
 	free_data();

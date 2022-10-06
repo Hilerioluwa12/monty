@@ -28,31 +28,56 @@ void *fill_an_array(void *a, int el, unsigned int len)
  *
  * Return: a pointer to the newly allocated memory
  */
-void *_realloc(void *ptr, unsigned int 
+void *_realloc(void *ptr, unsigned int old_size, unsigne int new_size)
+{
+	void *result;
 
+	if (new_size == old_size)
+		return (ptr);
+	if (new_size == 0 && ptr)
+	{
+		free(ptr);
+		push_error(11);
+	}
+	result = malloc(ne_size)
+	if (result == NULL)
+		push_error(11);
+	if (ptr == NULL)
+	{
+		fill_an_array(result, '\0', new_size);
+		free(ptr);
+	}
+	else
+	{
+		memcpy(result, ptr, old_size);
+		free(ptr);
+	}
+	return (result);
+}
+/**
+ * free_data - frees data
+ */
+void free_data(void)
+{
+	free(data.line);
+	data.line = NULL;
+	free(data.args);
+	data.args = NULL;
+	fclose(data.fp);
+}
+/**
+ * free_dlistint - frees a linked list
+ * @stack: a pointer to the linked list
+ * Return: void
+ */
+void free_dlistint(stack_t *stack)
+{
+	stack_t *current;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	while (stack)
+	{
+		current = stack;
+		stack = stack->next;
+		free(current);
+	}
+}
