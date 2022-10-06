@@ -13,7 +13,7 @@ data_t data;
  */
 int main(int ac, char **av)
 {
-	statck_t *stack = NULL;
+	stack_t *stack = NULL;
 	ssize_t n_read = 1;
 	size_t length = 0;
 
@@ -24,7 +24,7 @@ int main(int ac, char **av)
 	data.fp = fopen(data.filename, "r");
 	if (data.fp == NULL)
 		push_error(14);
-	while ((n_read = getline(&data.line, &length, fp)) > 0)
+	while ((n_read = getline(&data.line, &length, data.fp)) > 0)
 	{
 		if (*data.line == '\n')
 			continue;
