@@ -1,3 +1,5 @@
+![monty](https://user-images.githubusercontent.com/104834114/194239467-0552553a-9b74-4612-9325-f96ae0b639ed.png)
+
 ## Resources
 Read or watch:
 
