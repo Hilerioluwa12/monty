@@ -48,7 +48,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
 	{
 		tmp = *stack;
 		while (tmp->next)
-			tmp = tmp->next;
+		tmp = tmp->next;
 		new->prev = tmp;
 		new->next = NULL;
 		tmp->next = new;
