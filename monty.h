@@ -76,7 +76,6 @@ void monty_queue(stack_t **stack, unsigned int line_number);
 char **strtow(char *str, char *delims);
 char *get_int(int n);
 
-
 /* ERROR MESSAGES & ERROR CODES */
 int usage_error(void);
 int malloc_error(void);
