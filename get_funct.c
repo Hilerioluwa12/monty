@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * p_func - Matches an opcode with its corresponding function.
+ * get_op_func - Matches an opcode with its corresponding function.
  * @opcode: The opcode to match.
  *
  * Return: A pointer to the corresponding function.
