@@ -137,4 +137,4 @@ You have to use malloc and free and are not allowed to use any other function fr
 
 ---
 ## AUthors
-Martins Abayomi Adebayo [github profile](https://github.com/Hilerioluwa12)
+[Martins Abayomi Adebayo](https://github.com/Hilerioluwa12)
